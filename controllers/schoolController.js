@@ -35,8 +35,7 @@ exports.listSchools = (req, res) => {
   if (!userLat || !userLon) {
     return res.status(400).json({ error: 'latitude and longitude are required' });
   }
-  console.log(userLat);
-  console.log(userLon);
+  
   School.getAllSchools((err, results) => {
     if (err) return res.status(500).json({ error: err.message });
 
